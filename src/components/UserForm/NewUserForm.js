@@ -12,6 +12,7 @@ function NewUserForm(props) {
   const nameChangeHandler = (event) => {
     setEnteredName(event.target.value);
   };
+
   const ageChangeHandler = (event) => {
     setEnteredAge(event.target.value);
   };
@@ -19,14 +20,22 @@ function NewUserForm(props) {
   const submitHandler = (event) => {
     event.preventDefault();
 
+    if (enteredName.trim().length === 0 || enteredAge.trim().length === 0) {
+      return;
+    }
+
     const newUser = {
+
       name: enteredName,
       age: +enteredAge,
+      id: Math.random().toString(),
     };
 
+    console.log(newUser);
+
+    props.onAddItem(newUser);
     setEnteredName("");
     setEnteredAge("");
-    props.onAddItem(newUser);
   };
 
   return (

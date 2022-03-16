@@ -2,8 +2,7 @@ import React, { useState } from "react";
 
 import NewUserForm from "./components/UserForm/NewUserForm";
 import ListItems from "./components/Users/ListItems";
-
-
+import ErrorModal from "./components/Users/ListItems";
 
 const usersList = [];
 
@@ -16,7 +15,7 @@ function App() {
     });
   };
 
-  console.log(updatedUserList)
+  console.log(updatedUserList);
 
   return (
     <div className="container">

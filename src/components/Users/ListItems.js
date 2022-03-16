@@ -11,8 +11,8 @@ const ListItems = (props) => {
   }
   return (
     <Card>
-      {props.usersArr.map((item) => (
-        <div className="list-items">
+      {props.usersArr.map((item) => ( 
+        <div className="list-items" key={item.id}>
           <EachUser name={item.name} age={item.age} />
         </div>
       ))}
@@ -21,3 +21,4 @@ const ListItems = (props) => {
 };
 
 export default ListItems;
+  
