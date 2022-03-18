@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Card from "../UI/Card";
 import ErrorModal from "../UI/ErrorModal";
 import Button from "../UI/Button";
+import Wrapper from "../Helpers/Wrapper";
 
 import "./NewUserForm.css";
 
@@ -53,7 +54,7 @@ function NewUserForm(props) {
   };
 
   return (
-    <div>
+    <Wrapper>
       {error && (
         <ErrorModal
           title={error.title}
@@ -63,33 +64,33 @@ function NewUserForm(props) {
       )}
       <Card className="form-item">
         <form onSubmit={submitHandler}>
-          <div>
-            <div className="form-item_input">
-              <label htmlFor="username">Username</label>
-              <input
-                id="username"
-                type="text"
-                value={enteredName}
-                onChange={nameChangeHandler}
-              />
-            </div>
-            <div className="form-item_input">
-              <label htmlFor="userage">Age (Years)</label>
-              <input
-                id="userage"
-                type="number"
-                min="0"
-                step="1"
-                value={enteredAge}
-                onChange={ageChangeHandler}
-              />
-            </div>
+          <div className="form-item_input">
+            <label htmlFor="username">Username</label>
+            <input
+              id="username"
+              type="text"
+              value={enteredName}
+              onChange={nameChangeHandler}
+            />
           </div>
+          <div className="form-item_input">
+            <label htmlFor="userage">Age (Years)</label>
+            <input
+              id="userage"
+              type="number"
+              min="0"
+              step="1"
+              value={enteredAge}
+              onChange={ageChangeHandler}
+            />
+          </div>
+
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </Wrapper>
   );
 }
 
 export default NewUserForm;
+ 

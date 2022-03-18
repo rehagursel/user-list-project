@@ -15,10 +15,10 @@ function App() {
   };
 
   return (
-    <div className="container">
+    <React.Fragment>                                    
       <NewUserForm onAddItem={addItemsHandler} />
       <ListItems usersArr={updatedUserList} />
-    </div>
+    </React.Fragment>
   );
 }
 
