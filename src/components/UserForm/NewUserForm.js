@@ -53,7 +53,7 @@ function NewUserForm(props) {
     props.onAddItem(newUser);
    /*  setEnteredName("");
     setEnteredAge(""); */
-    nameInputRef.current.value = '';     //manupulating DOM without react is 
+    nameInputRef.current.value = '';     //manupulating DOM without react is not appropriate dont use for addding or changing something
     ageInputRef.current.value = '';
   };
 
@@ -77,7 +77,7 @@ function NewUserForm(props) {
             <input
               id="username"
               type="text"
-              /* value={enteredName}
+              /* value={enteredName}      //uncontrolled input component because we dont use react we read values with ref
               onChange={nameChangeHandler} */
               ref={nameInputRef}
             />
